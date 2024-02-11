@@ -9,6 +9,8 @@ import CodeBlocks from '../components/core/HomePage/CodeBlocks'
 import Footer from '../components/common/Footer'
 import TimelineSection from '../components/core/HomePage/TimelineSection'
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
+import InstructorSection from '../components/core/HomePage/InstructorSection'
+import ExploreMore from '../components/core/HomePage/ExploreMore'
 const Home = () => {
   return (
     <div>
@@ -125,8 +127,9 @@ const Home = () => {
                     codeColor={"text-yellow-25"}
                 />
             </div>
-        </div>
 
+            <ExploreMore/>
+        </div>
 
         {/* SECTION 2  */}
         <div className='bg-pure-greys-5 text-richblack-700'>
@@ -170,12 +173,22 @@ const Home = () => {
 
                 <TimelineSection/>
             <LearningLanguageSection/>
+
             </div>
 
-           
-        </div>
 
+
+        </div>
+           
         {/* SECTION 3  */}
+        <div className='w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8 bg-richblack-900 text-white'>
+                    <InstructorSection/>
+
+            <h2 className='text-center text-4xl font-semibold mt-10'>
+                Review from Other Learners
+                {/* <ReviewSlider/> */}
+            </h2>
+        </div>
 
         {/* FOOTER  */}
         <Footer/>
