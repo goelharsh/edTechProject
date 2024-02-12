@@ -36,7 +36,7 @@ exports.showAllCategories = async(req,res)=>{
         const allCategorys = await Category.find({}, {name:true, description:true})
         res.status(200).json({
             success:true,
-            allCategorys
+            data:allCategorys
         })
     } catch (error) {
         return res.status(500).json({
