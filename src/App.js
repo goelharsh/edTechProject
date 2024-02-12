@@ -5,7 +5,9 @@ import Navbar from "./components/common/Navbar";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-
+import ForgotPassword from "./pages/ForgotPassword";
+import { Link } from "react-router-dom";
+import UpdatePassword from "./pages/UpdatePassword";
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
@@ -29,6 +31,22 @@ function App() {
                element={
                   <OpenRoute>
                     <Login/>
+                  </OpenRoute>
+               }
+        />
+
+
+        <Route path="/forgot-password"
+               element={
+                  <OpenRoute>
+                    <ForgotPassword/>
+                  </OpenRoute>
+               }
+        />
+        <Route path="/update-password/:id"
+               element={
+                  <OpenRoute>
+                    <UpdatePassword/>
                   </OpenRoute>
                }
         />
