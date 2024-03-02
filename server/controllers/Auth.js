@@ -76,7 +76,7 @@ exports.signUp = async (req,res)=>{
         if(existingUser){
             return res.status(400).json({
                 success:false,
-                message:"User already registeree",
+                message:"User already registered",
             })
         }
         // find most recent otp for the user 

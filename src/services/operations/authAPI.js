@@ -6,6 +6,7 @@ import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
 
+
 const {
   SENDOTP_API,
   SIGNUP_API,
@@ -55,6 +56,7 @@ export function signUp(
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
+    
     try {
       const response = await apiConnector("POST", SIGNUP_API, {
         accountType,

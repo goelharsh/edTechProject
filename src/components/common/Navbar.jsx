@@ -9,17 +9,34 @@ import ProfileDropDown from '../core/Auth/ProfileDropDown'
 import { apiConnector } from '../../services/apiconnector'
 import { courseEndpoints } from '../../services/apis'
 import {BsChevronDown} from "react-icons/bs"
+
+
+// const subLinks = [
+//   {
+//     title:"Python",
+//     link:"/catalog/python"
+//   },
+//   {
+//     title:"Web Dev",
+//     link:"/catalog/web-development"
+//   }
+// ]
+
+
 const Navbar = () => {
 
-
+  console.log("Printing base url: ", process.env.REACT_APP_BASE_URL);
 
     const {token} = useSelector((state)=> state.auth)
     const {user} = useSelector((state)=> state.profile)
     const {totalItems} = useSelector((state)=> state.cart)
+
     const location = useLocation()
 
     const [subLinks, setSubLinks] = useState([])
+
     const [loading, setLoading] = useState(false)
+
     const fetchSublinks = async() => {
         try{
             const result = await apiConnector("GET", courseEndpoints.COURSE_CATEGORIES_API);
@@ -51,7 +68,7 @@ const Navbar = () => {
                 <img src={logo} width={160} height={42} loading='lazy'/>
             </Link>
 
-
+        {/* NAV LINKS  */}
         <nav>
         <ul className='flex gap-x-6 text-richblack-25'>
         {
@@ -60,7 +77,7 @@ const Navbar = () => {
                     {
                         link.title === "Catalog" ?
                         (
-                  <>
+                  
                     <div
                       className={`group relative flex cursor-pointer items-center gap-1 ${
                         matchRoute("/catalog/:catalogName")
@@ -98,7 +115,7 @@ const Navbar = () => {
                         )}
                       </div>
                     </div>
-                  </>
+                  
                 ) :
                         (
                             <Link to={link?.path}>
@@ -120,7 +137,7 @@ const Navbar = () => {
             <div className='flex gap-x-4 items-center'>
                 {
                     user && user.accountType != "Instructor" && (
-                        <Link to="dashboard/cart"
+                        <Link to="/dashboard/cart"
                         className='relative'
                         >
                             <AiOutlineShoppingCart />
