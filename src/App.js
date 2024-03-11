@@ -21,7 +21,8 @@ import Settings from "./components/core/Dashboard/Settings";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import EditCourse from "./components/core/Dashboard/EditCourse";
-
+import Catalog from "./pages/Catalog";
+import Contact from "./pages/Contact";
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home/>}/>
-
+        <Route path="catalog/:catalogName" element={<Catalog/>} />
         <Route path="signup"
                element={
                   <OpenRoute>
@@ -82,6 +83,7 @@ function App() {
                   </OpenRoute>
                }
         />
+        <Route path="/contact" element={<Contact/>}/>
 
       <Route
         element={
