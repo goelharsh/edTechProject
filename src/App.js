@@ -97,13 +97,13 @@ function App() {
           <Route path="dashboard/my-profile" element={<MyProfile/>}/>
           <Route path="dashboard/Settings" element={<Settings />} />
           {
-            user?.accountType === ACCOUNT_TYPE.STUDENT && (
-              <>
-                 <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>}/>
-                  <Route path="dashboard/cart" element={<Cart/>}/>
-              </>
-            )
-          }
+        user?.accountType === ACCOUNT_TYPE.STUDENT && (
+          <>
+          <Route path="dashboard/cart" element={<Cart />} />
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+          </>
+        )
+      }
 
 
           {
